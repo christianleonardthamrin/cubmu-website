@@ -12,7 +12,7 @@ export default function Navbar() {
         console.log(activeNav, 'active')
     }, [activeNav])
     return (
-        <div className='navbar-wrapper py-6 flex justify-around lg:justify-center items-center tracking-navlink' style={{backgroundColor: '#1E1F26'}}>
+        <div className='navbar-wrapper py-6 sticky top-0 z-40 flex justify-around lg:justify-center items-center tracking-navlink' style={{backgroundColor: '#1E1F26'}}>
             <Image 
                 className='mr-10 lg:mr-24'
                 src={'/assets/logo/logo-cubmu.svg'} 
