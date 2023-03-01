@@ -1,4 +1,4 @@
-import getBaseUrl from "@/helper/general_helper"
+import { getBaseUrl } from "helper/general_helper"
 import { createSlice } from "@reduxjs/toolkit"
 import axios from "axios"
 

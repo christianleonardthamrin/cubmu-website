@@ -1,9 +1,10 @@
-import getBaseUrl from "@/helper/general_helper"
+import { getBaseUrl } from "helper/general_helper"
 import { createSlice } from "@reduxjs/toolkit"
 import axios from "axios"
 
 const initialState = {
-    values: []
+    values: [],
+    selected: null
 }
 
 export const couponSlice = createSlice({
@@ -12,6 +13,9 @@ export const couponSlice = createSlice({
     reducers: {
         getAllCoupons: (state, action) => {
             state.values = action.payload
+        },
+        selectCoupon: (state, action) => {
+            state.selected = action.payload
         }
     }
 })
@@ -23,6 +27,6 @@ export const fetchCoupons = () =>
         .catch(err => console.log(err))
     }
 
-export const {getAllCoupons} = couponSlice.actions
+export const {getAllCoupons, selectCoupon} = couponSlice.actions
 
 export default couponSlice.reducer

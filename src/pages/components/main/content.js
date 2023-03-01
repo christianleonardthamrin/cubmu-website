@@ -5,7 +5,7 @@ import Modal from "./components/modal";
 import Tabs from "./components/tabs";
 import { fetchCategories } from "@/redux/features/category/categorySlice";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCoupons } from "@/redux/features/coupon/couponSlice";
+import { fetchCoupons, selectCoupon } from "@/redux/features/coupon/couponSlice";
 
 export default function Content() {
     const arr = [0, 1, 2, 3, 4]
@@ -13,6 +13,12 @@ export default function Content() {
 
     const dispatch = useDispatch()
     const coupons = useSelector((state) => state.coupon.values)
+    const selectedCoupon = useSelector((state) => state.coupon.selected)
+
+    const selectCouponHandler = async (coupon) => {
+        await dispatch(selectCoupon(coupon))
+        setShowModal(true)
+    }
 
     useEffect(() => {
         dispatch(fetchCategories())
@@ -25,11 +31,11 @@ export default function Content() {
             <div className="mt-6 flex justify-center">
                 <div className="flex flex-col flex-wrap gap-6 lg:grid lg:grid-cols-3 justify-around">
                     {coupons.map((coupon, index) => (
-                        <Card key={index} setShowModal={setShowModal} coupon={coupon} />
+                        <Card key={index} coupon={coupon} selectCouponHandler={selectCouponHandler} />
                     ))}
                 </div>
-                {showModal ? <Modal setShowModal={setShowModal} /> : null}
             </div>
+            {showModal ? <Modal setShowModal={setShowModal} coupon={selectedCoupon} /> : null}
         </div>
     )
 }
