@@ -13,9 +13,9 @@ export default function Card({selectCouponHandler, coupon, setIsTnc}) {
         <div className="card flex lg:flex-col rounded w-full h-150px lg:h-475px bg-white">
             <div className="image-wrapper">
                 {coupon ? (
-                    <Image
+                    <img
                         className='rounded-tl rounded-bl lg:rounded-t lg:rounded-bl-none w-150px h-150px lg:w-305px lg:h-305px'
-                        src={'JCO_1669103693.jpeg'} 
+                        src={coupon.couponBrandLogo} 
                         width={305}
                         height={305}
                         alt='spoon'

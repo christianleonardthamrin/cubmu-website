@@ -2,9 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    loader: 'custom',
+    // loader: 'transvision',
     domains: ['servicebuss-dev.transvision.co.id'],
-    path: 'https://servicebuss-dev.transvision.co.id:9443/cubmu/images/trinvi/coupon_brand'
+    // path: 'https://servicebuss-dev.transvision.co.id:9443/cubmu/images/trinvi/coupon_brand'
   }
 }
 

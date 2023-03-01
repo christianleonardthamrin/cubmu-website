@@ -21,7 +21,7 @@ export default function Modal({setShowModal, coupon, isTnc, setIsTnc}) {
                         <>
                             <div className="rounded-32px shadow-lg flex flex-col lg:flex-row bg-white">
                                 {coupon ? (
-                                    <Image
+                                    <img
                                         className='rounded-t-32px lg:rounded-tl-32px lg:rounded-tr-none lg:rounded-bl-32px w-305px h-305px'
                                         src={coupon.couponBrandLogo} 
                                         width={343}
