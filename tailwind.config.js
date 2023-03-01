@@ -28,6 +28,8 @@ module.exports = {
         'discount': '#26D27F',
         'off': '#B3B3B3',
         'promo': '#868788',
+        'footer': '#1E1F26',
+        'footer-text': '#C1C1C2'
       },
       width: {
         '150px': '150px',

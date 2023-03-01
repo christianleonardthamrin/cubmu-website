@@ -7,7 +7,7 @@ const inter = Inter({
   style: ['normal']
 })
 
-export default function Card({selectCouponHandler, coupon}) {
+export default function Card({selectCouponHandler, coupon, setIsTnc}) {
     
     return (
         <div className="card flex lg:flex-col rounded w-full h-150px lg:h-475px bg-white">
@@ -34,7 +34,9 @@ export default function Card({selectCouponHandler, coupon}) {
                     </span>
                     <button 
                         className="text-xs font-semibold px-14px py-2 rounded-20px hidden lg:inline" 
-                        style={{color: 'rgba(0, 0, 0, 0.5)', border: 'solid 1px rgba(0, 0, 0, 0.2)'}}>
+                        style={{color: 'rgba(0, 0, 0, 0.5)', border: 'solid 1px rgba(0, 0, 0, 0.2)'}}
+                        onClick={() => {selectCouponHandler(coupon);setIsTnc(true)}}
+                    >
                         T&C {' >'}
                     </button>
                 </div>

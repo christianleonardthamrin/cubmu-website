@@ -10,7 +10,8 @@ import { fetchCoupons, selectCoupon } from "@/redux/features/coupon/couponSlice"
 export default function Content() {
     const arr = [0, 1, 2, 3, 4]
     const [showModal, setShowModal] = useState(false)
-
+    const [isTnc, setIsTnc] = useState(false)
+ 
     const dispatch = useDispatch()
     const coupons = useSelector((state) => state.coupon.values)
     const selectedCoupon = useSelector((state) => state.coupon.selected)
@@ -31,11 +32,11 @@ export default function Content() {
             <div className="mt-6 flex justify-center">
                 <div className="flex flex-col flex-wrap gap-6 lg:grid lg:grid-cols-3 justify-around">
                     {coupons.map((coupon, index) => (
-                        <Card key={index} coupon={coupon} selectCouponHandler={selectCouponHandler} />
+                        <Card key={index} coupon={coupon} selectCouponHandler={selectCouponHandler} setIsTnc={setIsTnc} />
                     ))}
                 </div>
             </div>
-            {showModal ? <Modal setShowModal={setShowModal} coupon={selectedCoupon} /> : null}
+            {showModal ? <Modal setShowModal={setShowModal} coupon={selectedCoupon} isTnc={isTnc} setIsTnc={setIsTnc} /> : null}
         </div>
     )
 }
