@@ -15,7 +15,7 @@ export default function Card({selectCouponHandler, coupon, setIsTnc}) {
                 {coupon ? (
                     <Image
                         className='rounded-tl rounded-bl lg:rounded-t lg:rounded-bl-none w-150px h-150px lg:w-305px lg:h-305px'
-                        src={coupon.couponBrandLogo} 
+                        src={'JCO_1669103693.jpeg'} 
                         width={305}
                         height={305}
                         alt='spoon'
