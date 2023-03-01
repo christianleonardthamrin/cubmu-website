@@ -1,6 +1,7 @@
 import { Mulish } from 'next/font/google'
 import Navbar from './components/navbar'
 import Content from './components/main/content'
+import Footer from './components/footer'
 
 const mulish = Mulish({ 
   subsets: ['latin'],
@@ -15,6 +16,7 @@ export default function Home() {
         <h1 className='text-2xl text-center md:text-left mb-11'>Benefit Kupon Untuk Kamu</h1>
         <Content />
       </main>
+      <Footer />
     </div>
   )
 }
