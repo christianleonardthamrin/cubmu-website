@@ -27,7 +27,7 @@ export default function Content() {
     }, [])
 
     return (
-        <div className="">
+        <div>
             <Tabs />
             <div className="mt-6 flex justify-center">
                 <div className="flex flex-col flex-wrap gap-6 lg:grid lg:grid-cols-3 justify-around">

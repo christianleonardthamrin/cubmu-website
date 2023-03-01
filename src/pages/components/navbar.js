@@ -5,12 +5,13 @@ import { useEffect, useState } from "react";
 
 export default function Navbar() {
     const router = useRouter()
-    const [activeNav, setActiveNav] = useState(router.asPath)
+    const [activeNav, setActiveNav] = useState('/')
+    
+    // useEffect(() => {})
 
     useEffect(() => {
-        console.log(router.asPath, 'router')
-        console.log(activeNav, 'active')
-    }, [activeNav])
+        setActiveNav(router.asPath)
+    }, [router])
     return (
         <div className='navbar-wrapper py-6 sticky top-0 z-40 flex justify-around lg:justify-center items-center tracking-navlink' style={{backgroundColor: '#1E1F26'}}>
             <Image 
@@ -21,14 +22,14 @@ export default function Navbar() {
                 alt='logo cubmu'
             />
             <ul className="hidden lg:flex lg:gap-12" style={{color: '#B1B2B3'}}>
-                <li onClick={() => setActiveNav(router.asPath)}>
+                <li>
                     <Link className={activeNav === '/' ? 'font-bold' : 'font-normal'} href={'/'}>HOME</Link>
                 </li>
-                <li onClick={() => setActiveNav(router.asPath)}>
+                <li>
                     <Link className={activeNav === '/#live-tv' ? 'font-bold' : 'font-normal'} href={'#live-tv'}>LIVE TV</Link>
                 </li>
                 <li>
-                    <Link className="flex gap-2 focus:font-bold" href={'#kategori'}>
+                    <Link className={`flex gap-2 ${activeNav === '/#kategori' ? 'font-bold' : 'font-normal'}`} href={'#kategori'}>
                         KATEGORI
                         <Image 
                             src={'/assets/icons/dropdown.svg'}
@@ -38,10 +39,10 @@ export default function Navbar() {
                         />
                     </Link>
                 </li>
-                <li onClick={() => setActiveNav(router.asPath)}>
+                <li>
                     <Link className={activeNav === '/#catch-up' ? 'font-bold' : 'font-normal'} href={'#catch-up'}>CATCH UP</Link>
                 </li>
-                <li onClick={() => setActiveNav(router.asPath)}>
+                <li>
                     <Link className={activeNav === '/#my-list' ? 'font-bold' : 'font-normal'} href={'#my-list'}>MY LIST</Link>
                 </li>
             </ul>
