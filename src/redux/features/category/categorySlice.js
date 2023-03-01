@@ -3,24 +3,22 @@ import { createSlice } from "@reduxjs/toolkit"
 import axios from "axios"
 
 const initialState = {
-    categories: []
+    values: []
 }
-
-const BASE_URL = getBaseUrl()
 
 export const categorySlice = createSlice({
     name: 'category',
     initialState,
     reducers: {
         getAllCategories: (state, action) => {
-            state.categories = action.payload
+            state.values = action.payload
         }
     }
 })
 
 export const fetchCategories = () => 
     async (dispatch) => {
-        await axios.get(BASE_URL + 'getAllCategory')
+        await axios.get(getBaseUrl() + 'getAllCategory')
         .then(({data}) => dispatch(getAllCategories(data.result)))
         .catch(err => console.log(err))
     }
