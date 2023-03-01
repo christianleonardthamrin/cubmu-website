@@ -38,7 +38,9 @@ module.exports = {
       height: {
         '150px': '150px',
         '305px': '305px',
+        '343px': '343px',
         '475px': '475px',
+        '626px': '626px'
       },
       borderRadius: {
         '20px': '20px',
