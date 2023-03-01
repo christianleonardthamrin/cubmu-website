@@ -5,7 +5,7 @@ export default function Tabs() {
     const [activeTab, setActiveTab] = useState(0)
 
     return (
-        <nav className="fixed inset-x-0 bottom-0 lg:relative flex flex-nowrap items-center overflow-scroll lg:overflow-hidden scrollbar-hide" style={{backgroundColor: '#1E1F26'}}>
+        <nav className="fixed inset-x-0 bottom-0 lg:relative flex flex-nowrap items-center overflow-scroll lg:overflow-auto scrollbar-hide" style={{backgroundColor: '#1E1F26'}}>
             <div className="flex justify-evenly basis-full">
                 <button 
                     className={`flex justify-center items-center py-4 w-20 md:w-52 lg:w-auto lg:basis-1/6 border-b-4 ${activeTab === 0 ? 'border-tab-active' : 'border-tab-inactive'}`}
