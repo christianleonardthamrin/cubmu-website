@@ -6,7 +6,7 @@ const inter = Inter({
   style: ['normal']
 })
 
-export default function Card() {
+export default function Card({setShowModal}) {
     return (
         <div className="card flex lg:flex-col rounded w-fit h-150px lg:h-475px bg-white">
             <div className="image-wrapper">
@@ -32,7 +32,10 @@ export default function Card() {
                     </button>
                 </div>
                 <span className="text-10px lg:text-xs font-normal text-promo mt-2">Promo Sampai 31 Desember 2022</span>
-                <button className="mt-2 bg-discount w-161px py-1 lg:py-2 text-xs lg:text-base font-bold self-center">
+                <button 
+                    className="mt-2 bg-discount w-161px py-1 lg:py-2 lg:w-full text-xs lg:text-base font-bold self-center rounded"
+                    onClick={() => setShowModal(true)}
+                >
                     Tukarkan
                 </button>
             </div>
