@@ -10,7 +10,7 @@ export default function Tabs() {
             <div className="flex justify-evenly basis-full">
                 {categories.length > 0 ? (
                     <button 
-                    className={`flex justify-center items-center py-4 w-20 md:w-52 lg:w-auto lg:basis-1/7 border-b-4 ${activeTab === 0 ? 'border-tab-active' : 'border-tab-inactive'}`}
+                    className={`flex justify-center items-center py-4 w-40 md:w-52 lg:w-auto lg:basis-1/7 border-b-4 ${activeTab === 0 ? 'border-tab-active' : 'border-tab-inactive'}`}
                     onClick={() => setActiveTab(0)}
                 >
                     <Image 
@@ -26,7 +26,7 @@ export default function Tabs() {
                 {categories.length > 0 ? categories.map((category) => (
                     <button 
                         key={category.categoryId}
-                        className={`flex justify-center items-center py-4 w-20 md:w-52 lg:w-auto lg:basis-1/7 border-b-4 ${activeTab === category.categoryId ? 'border-tab-active' : 'border-tab-inactive'}`}
+                        className={`flex justify-center items-center py-4 w-40 md:w-52 lg:w-auto lg:basis-1/7 border-b-4 ${activeTab === category.categoryId ? 'border-tab-active' : 'border-tab-inactive'}`}
                         onClick={() => setActiveTab(category.categoryId)}
                     >
                         <Image 
