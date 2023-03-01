@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 export default function Tabs() {
     const [activeTab, setActiveTab] = useState(0)
-    const categories = useSelector((state) => state.category.categories)
+    const categories = useSelector((state) => state.category.values)
     return (
         <nav className="fixed inset-x-0 bottom-0 lg:relative flex flex-nowrap items-center overflow-scroll lg:overflow-auto scrollbar-hide" style={{backgroundColor: '#1E1F26'}}>
             <div className="flex justify-evenly basis-full">

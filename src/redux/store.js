@@ -1,9 +1,11 @@
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import categoryReducer from './features/category/categorySlice'
+import couponReducer from './features/coupon/couponSlice'
 
 export const store = configureStore({
     reducer: {
-        category: categoryReducer
+        category: categoryReducer,
+        coupon: couponReducer
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
